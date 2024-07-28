@@ -1,113 +1,95 @@
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
+"use client"; // This directive must be at the top of the file
+
+import Paragraph from '@/components/paragrap';
+import Navbar from '../components/Navbar';
+import Header from '@/components/Header';
+import List from '@/components/List';
+import SectionTitle from '@/components/sectiontitle';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <Navbar />
+      <header className="header">
+        <h1>BUILDING TOGETHER</h1>
+      </header>
+     
+      <main className="main-content">
+      <div>
+      <Header />
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className='bg-yellow-100 rounded-2xl p-4'>
+            <SectionTitle title="Introduction" />
+            <Paragraph>
+              It is time to construct an alternative approach to solving the housing crisis.
+            </Paragraph>
+          </div>
+
+          <div>
+            <SectionTitle title="Current Challenges" />
+            <Paragraph>
+              The State continues to face a serious challenge in order to achieve its target of delivering 10,000 social homes in addition to a significant number of affordable homes each year. However, a fast and effective solution exists in an alternative home-building approach.
+            </Paragraph>
+          </div>
+
+          <div>
+            <SectionTitle title="Proposed Solution" />
+            <Paragraph>
+              An alternative model that embraces innovative and modern methods of construction whereby the majority of building takes place off-site in a factory setting would lead to significantly more social and affordable homes being built both faster, and more cost effectively.
+            </Paragraph>
+          </div>
+
+          <div>
+            <SectionTitle title="Benefits of Off-Site Construction" />
+            <Paragraph>
+              Recent studies have shown that the adoption of modern construction methods can lead to homes being built up to 60% faster and reduce the need for on-site labour by more than 70%, resulting in more effective delivery outcomes.
+            </Paragraph>
+            <List items={[
+              "Faster construction times",
+              "Reduced on-site labour",
+              "Higher quality homes",
+              "Cost efficiency",
+              "Improved carbon footprint",
+            ]} />
+          </div>
+
+          <div>
+            <SectionTitle title="Implementation Strategy" />
+            <Paragraph>
+              Coupling the savings in the hard costs of building with improvements in the soft and indirect costs such as taxes and levies, in addition to streamlining the public bidding process as well as harmonising designs and standards, would lead to the delivery of social and affordable, high-quality, energy efficient, three-bed homes for less than €250,000 each.
+            </Paragraph>
+          </div>
+
+          <div>
+            <SectionTitle title="Conclusion" />
+            <Paragraph>
+              With the ingredients for an alternative, builder-led solution to the housing crisis at the government's disposal, now is the time to move beyond the current debate and commence a large-scale public-sector house building programme which leverages off-site construction techniques.
+            </Paragraph>
+          </div>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+    </div>
+        {/* Add more content as needed */}
+      </main>
+      <style jsx>{`
+        .header {
+          background-image: url('/mainlineimage.jpg'); // Add your image path here
+          background-size: cover;
+          background-position: center;
+          height: 70vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 3rem;
+          font-weight: bold;
+        }
+        .main-content {
+          padding: 2rem;
+        }
+      `}</style>
+    </div>
   );
 }
