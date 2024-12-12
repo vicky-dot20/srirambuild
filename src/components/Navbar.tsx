@@ -15,8 +15,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo w-46 h-4">
-          <img src="/sriram-builders-logo.webp" alt="Sriram Builders Logo" className="logo-image w-64 h-4" />
+        <div className="logo-container">
+         
+          <img src="/sriram-builders-logo.webp" alt="Sriram Builders Logo" className="logo-image" />
+          <span className="company-name">Sriram Builders</span>
         </div>
         <ul className="nav-items">
           {navItems.map((item, index) => (
@@ -38,13 +40,18 @@ const Navbar: React.FC = () => {
           justify-content: space-between;
           align-items: center;
         }
-        .logo {
-          font-size: 1.5rem;
-          font-weight: bold;
+        .logo-container {
+          display: flex;
+          align-items: center;
         }
         .logo-image {
           height: 50px; /* Adjust the height as needed */
           width: auto;
+          margin-left: 0.5rem;
+        }
+        .company-name {
+          font-size: 1.5rem;
+          font-weight: bold;
         }
         .nav-items {
           display: flex;
