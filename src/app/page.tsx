@@ -24,7 +24,7 @@ export default function Home() {
           <div className='bg-yellow-100 rounded-2xl p-4'>
             <SectionTitle title="Introduction" />
             <Paragraph>
-              It is time to construct an alternative approach to solving the housing crisis.
+              It is time to construct an alternative approach to solving the housing
             </Paragraph>
           </div>
 
