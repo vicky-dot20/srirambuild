@@ -1,0 +1,49 @@
+version: "1.0"
+
+stages:
+  - "clone"
+  - "build"
+  - "push"
+  - "test"
+
+steps:
+  # Step 1: Clone the repository
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "vicky-dot20/srirambuild"  # Replace with your repository name
+    revision: "${{CF_BRANCH}}"  # Uses the branch that triggered the pipeline
+    git: "github"
+    stage: "clone"
+
+  # Step 2: Build Docker image
+  build:
+    title: "Building Docker image"
+    type: "build"
+    image_name: "vigneshkumar703/srirambuild"  # Name of your Docker image
+    working_directory: "${{clone}}"  # Use the cloned repository directory
+    tag: latest  # Tag based on branch or tag name
+    dockerfile: "Dockerfile"  # Ensure this points to your Dockerfile
+    stage: "build"
+    no_cache: true  # Optional, ensures no cache is used during the build
+
+  # Step 3: Push Docker image to Docker Hub (docker.io)
+  push:
+    title: "Pushing Docker image"
+    type: "push"
+    arguments:
+      candidate: '${{build}}'  # Refers to the build step
+      tag: latest  # Tag for the Docker image
+      image_name: "vigneshkumar703/srirambuild"  # Use your Docker Hub username/image
+      registry: "devportal"  # Docker Hub registry
+      stage: "push"
+
+  # Step 4: Run tests (example)
+  test:
+    title: "Running test"
+    type: "freestyle"  # Run any command
+    image: "ubuntu:latest"  # The image in which command will be executed
+    working_directory: "${{clone}}"  # Running command where code is cloned
+    commands:
+      - "ls"  # Replace with actual test commands if needed
+    stage: "test"
