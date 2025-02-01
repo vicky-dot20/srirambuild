@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-container">
         <div className="logo-container">
          
-          <img src="/sriram-builders-logo.webp" alt="Sriram Builders Logo" className="logo-image" />
+          {/* <img src="/sriram-builders-logo.webp" alt="Sriram Builders Logo" className="logo-image" /> */}
           <span className="company-name">Sriram Builders</span>
         </div>
         <ul className="nav-items">
